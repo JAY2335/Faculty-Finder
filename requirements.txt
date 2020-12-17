@@ -1,0 +1,7 @@
+flask
+pandas
+gunicorn
+python-dotenv
+utile
+flask-pymongo
+gspread

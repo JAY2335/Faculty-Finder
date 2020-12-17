@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    
+    <div class='title'>
+        <h1>FACULTY FINDER</h1>
+        
+    </div>
+    <div class='title1'>
+        <h2>Your one stop from hassle free selection of faculties</h2>
+    </div>
+
+    <div class='content'>
+        <form name="fac" method="POST">
+            <label for="">COURSE CODE</label>
+            <input name="code" type="text" required>
+            <br>
+            <button id="process"  type="submit" class="btn btn-outline-dark">OKEY DOKEY DOWNLOAD!</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div style="color: black;" class="course-title">
+        <h4>{{ code }} - > {{ cname }}</h4>
+        <br>
+        <br>
+    </div>
+    
+    <div style="font-size: 1.2rem;" class="text-result">
+        {% for my_item in lis %}
+            <list style="color: black;">{{ my_item }} |</list>
+        {% endfor %}
+    </div>
+    <div class='row credits'>
+        <div>
+            <p>Made with ❤ </p>
+        
+        </div>
+        <br>
+        <br>
+        <div col-12>
+            JAY
+        </div>
+        
+    </div>
+    <script>
+        // function dokey(){
+        //     if(document.getElementById("okey").disabled == false){
+        //         document.getElementById("okey").disabled = true;
+        //         document.getElementById("down").href = `{{ url_for('download_file') }}`;
+                
+        //     }
+        //     else{
+        //         document.getElementById("okey").disabled = false;
+        //         document.getElementById("down").href = "#";
+        //         console.log(document.getElementById("down").href);
+        //     }
+        // }
+
+        // document.getElementById('process').addEventListener('click',function(){
+        //     
+        //     if(document.getElementById("okey").disabled == true){
+        //         document.getElementById("okey").disabled = false;
+        //         document.getElementById("down").href = `{{ url_for('download_file') }}`;
+        //         console.log(document.getElementById("down").href);
+        //     }
+        //     else{
+        //         document.getElementById("okey").disabled = true;
+        //         document.getElementById("down").href = "";
+        //         console.log("FAiler");
+        //     }
+        // })
+    </script>
+    
+</body>
+</html>
